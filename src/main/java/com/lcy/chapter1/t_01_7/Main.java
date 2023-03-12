@@ -6,10 +6,6 @@ import java.util.Scanner;
 // 二叉树打印
 //TODO:
 public class Main {
-    /*
-    Description
-    Given a Complete Binar
-     */
 
     //实现完全二叉树的层级遍历
     public static void levelOrder(int[] nums) {
