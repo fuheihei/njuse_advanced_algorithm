@@ -6,8 +6,8 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
- * 模板题 求逆序对个数
- * 树状数组 统计逆序个数
+ * 模板问题： 求逆序对个数
+ * 方法：树状数组 统计逆序个数
  * <p>
  * 参考题目:
  * https://leetcode.cn/problems/count-of-smaller-numbers-after-self
@@ -30,7 +30,9 @@ public class Main {
     private static int[] A;
 
     public static int countSmaller(int[] nums) {
+        //1. 离散化
         discretization(nums);
+        //2.初始化，构造树状数组
         init(nums.length + 5);
         int pairs = 0;
         for (int i = nums.length - 1; i >= 0; --i) {
