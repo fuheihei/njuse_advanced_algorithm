@@ -23,6 +23,8 @@ import java.util.*;
 
 /**
  * 分治算法，网上"棋盘覆盖问题"资料较多，就不再赘述
+ *
+ * 可以不申请(2^n)*(2^n)的内存空间进行求解
  */
 public class Main {
     public static void main(String[] args) {
