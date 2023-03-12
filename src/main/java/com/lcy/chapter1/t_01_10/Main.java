@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 // 书本分法
 // 二分法
+// 和 宠物屋涂色 类似
 public class Main {
 
     public static void main(String[] args) {
