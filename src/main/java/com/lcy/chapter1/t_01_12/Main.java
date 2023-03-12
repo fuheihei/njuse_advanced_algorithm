@@ -21,16 +21,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+        int T = Integer.parseInt(sc.nextLine());
         while (T-- > 0) {
-            int N = sc.nextInt();
+            int N = Integer.parseInt(sc.nextLine());
             int[] entry = new int[N];
             int[] exit = new int[N];
+            String[] data = sc.nextLine().split("\\s+");
             for (int i = 0; i < N; i++) {
-                entry[i] = sc.nextInt();
+                entry[i] = Integer.parseInt(data[i]);
             }
+            data = sc.nextLine().split("\\s+");
             for (int i = 0; i < N; i++) {
-                exit[i] = sc.nextInt();
+                exit[i] = Integer.parseInt(data[i]);
             }
             getMaxNum(entry, exit);
         }
