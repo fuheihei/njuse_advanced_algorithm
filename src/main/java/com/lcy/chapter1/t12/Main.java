@@ -1,9 +1,12 @@
 package com.lcy.chapter1.t12;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 // TODO: 总是 runtime error
+// 但是什么都不交可以通过
 //  原题可以通过
 // https://practice.geeksforgeeks.org/problems/maximum-intervals-overlap5708
 /*
@@ -21,18 +24,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int T = Integer.parseInt(sc.nextLine());
+        int T = sc.nextInt();
         while (T-- > 0) {
-            int N = Integer.parseInt(sc.nextLine());
+            int N = sc.nextInt();
             int[] entry = new int[N];
             int[] exit = new int[N];
-            String[] data = sc.nextLine().split("\\s+");
             for (int i = 0; i < N; i++) {
-                entry[i] = Integer.parseInt(data[i]);
+                entry[i] = sc.nextInt();
             }
-            data = sc.nextLine().split("\\s+");
             for (int i = 0; i < N; i++) {
-                exit[i] = Integer.parseInt(data[i]);
+                exit[i] = sc.nextInt();
             }
             getMaxNum(entry, exit);
         }
@@ -40,38 +41,58 @@ public class Main {
 
     public static void getMaxNum(int[] entry, int[] exit) {
         //entry数组并不指定进入顺序，因此对数组进行排序，便于按时间顺序进行处理
+//        int n = entry.length;
+//        int mx = 0, t = 0;
+//        int[][] persons = new int[n][2];
+//        for (int i = 0; i < n; i++) {
+//            persons[i][0] = entry[i];
+//            persons[i][1] = exit[i];
+//        }
+//        Arrays.sort(persons, new Comparator<int[]>() {
+//            @Override
+//            public int compare(int[] o1, int[] o2) {
+//                if (o1[0] == o2[0]) {
+//                    return Integer.compare(o1[1], o2[1]);
+//                }
+//                return Integer.compare(o1[0], o2[0]);
+//            }
+//        });
+//        PriorityQueue<Integer> pq = new PriorityQueue<>();
+//        for (int i = 0; i < n; i++) {
+//            int cur = persons[i][0];
+//            pq.offer(persons[i][1]);
+//            while (!pq.isEmpty() && pq.peek() < cur) {
+//                pq.poll();
+//            }
+//            if (mx < pq.size()) {
+//                mx = pq.size();
+//                t = cur;
+//            }
+//        }
+        int[] ans = findMaxGuests(entry, exit, entry.length);
+
+        System.out.printf("%d %d\n", ans[0], ans[1]);
+    }
+
+
+    public static int[] findMaxGuests(int[] entry, int exit[], int n) {
         Arrays.sort(entry);
         Arrays.sort(exit);
-        int n = entry.length;
-        int i = 0, j = 0;
-        int maxNum = 0, maxTime = 0;
-        int curNum = 0; //记录当前时刻的派对人数
+        int guests = 1, mx = 1, t = entry[0];
+        int i = 1, j = 0;
         while (i < n && j < n) {
-            if (entry[i] < exit[j]) { //该时刻进入一人，当前人数增加
-                curNum++;
-                if (curNum > maxNum) {
-                    maxNum = curNum;
-                    maxTime = entry[i];
+            if (entry[i] <= exit[j]) {
+                guests++;
+                if (guests > mx) {
+                    mx = guests;
+                    t = entry[i];
                 }
                 i++;
-            } else if (entry[i] > exit[j]) { //该时刻离开一人，当前人数减少
-                curNum--;
+            } else {
+                guests--;
                 j++;
-            } else { //该时刻同时有人进出，先处理进入
-                while (i < n - 1 && entry[i] == entry[i + 1]) { //将所有该时刻进入人员记录
-                    i++;
-                    curNum++;
-                }
-                curNum++;
-                if (curNum > maxNum) {
-                    maxNum = curNum;
-                    maxTime = entry[i];
-                }
-                i++;
-                j++;
-                curNum--;
             }
         }
-        System.out.println(maxNum + " " + maxTime);
+        return new int[]{mx, t};
     }
 }
