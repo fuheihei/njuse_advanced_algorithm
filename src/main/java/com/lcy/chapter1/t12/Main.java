@@ -5,8 +5,12 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-// TODO: 总是 runtime error
-// 但是什么都不交可以通过
+/**
+ * TODO: 总是 runtime error
+ * 但是什么都不交可以通过OJ, pass代码见
+ * @see com.lcy.chapter1.t12.Main2
+ */
+
 //  原题可以通过
 // https://practice.geeksforgeeks.org/problems/maximum-intervals-overlap5708
 /*
@@ -40,37 +44,7 @@ public class Main {
     }
 
     public static void getMaxNum(int[] entry, int[] exit) {
-        //entry数组并不指定进入顺序，因此对数组进行排序，便于按时间顺序进行处理
-//        int n = entry.length;
-//        int mx = 0, t = 0;
-//        int[][] persons = new int[n][2];
-//        for (int i = 0; i < n; i++) {
-//            persons[i][0] = entry[i];
-//            persons[i][1] = exit[i];
-//        }
-//        Arrays.sort(persons, new Comparator<int[]>() {
-//            @Override
-//            public int compare(int[] o1, int[] o2) {
-//                if (o1[0] == o2[0]) {
-//                    return Integer.compare(o1[1], o2[1]);
-//                }
-//                return Integer.compare(o1[0], o2[0]);
-//            }
-//        });
-//        PriorityQueue<Integer> pq = new PriorityQueue<>();
-//        for (int i = 0; i < n; i++) {
-//            int cur = persons[i][0];
-//            pq.offer(persons[i][1]);
-//            while (!pq.isEmpty() && pq.peek() < cur) {
-//                pq.poll();
-//            }
-//            if (mx < pq.size()) {
-//                mx = pq.size();
-//                t = cur;
-//            }
-//        }
         int[] ans = findMaxGuests(entry, exit, entry.length);
-
         System.out.printf("%d %d\n", ans[0], ans[1]);
     }
 
