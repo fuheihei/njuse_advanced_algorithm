@@ -23,7 +23,7 @@ import java.util.*;
 
 /**
  * 分治算法，网上"棋盘覆盖问题"资料较多，就不再赘述
- *
+ * <p>
  * 可以不申请(2^n)*(2^n)的内存空间进行求解
  */
 public class Main {
@@ -62,6 +62,7 @@ public class Main {
                     }
                 }
             }
+            //为了符合输出要求，进行排序
             Collections.sort(ans, new Comparator<int[]>() {
                 @Override
                 public int compare(int[] o1, int[] o2) {
