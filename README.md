@@ -1,4 +1,4 @@
-[# njuse_advanced_algorithm
+# njuse_advanced_algorithm
 
 软件工程 高级算法课程OJ题汇总
 
@@ -8,8 +8,8 @@
 
 第一章
 还剩
-1-12 未完成, 总是runtime error
-但是输出为空是可以pass的。
+1-12 OJ有问题，答案总是runtime error
+但是输出为空是可以pass的, 代码见[这里](src/main/java/com/lcy/chapter1/t12/Main2.java)。
 
 第二章(未完成)
 更新到 2-5
