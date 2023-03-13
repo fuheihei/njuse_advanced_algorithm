@@ -2,6 +2,9 @@ package com.lcy.chapter2.t3;
 
 import java.util.*;
 
+/**
+ * DFS 入门问题
+ */
 public class Main {
 
     public static void main(String[] args) {

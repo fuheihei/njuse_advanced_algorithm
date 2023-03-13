@@ -2,6 +2,9 @@ package com.lcy.chapter2.t2;
 
 import java.util.*;
 
+/**
+ * BFS 入门问题
+ */
 public class Main {
 
     public static void main(String[] args) {
