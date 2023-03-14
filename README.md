@@ -13,8 +13,12 @@
 
 #### 第一章
 
-1-12 OJ有问题，答案总是runtime error
-但是输出为空是可以pass的, 代码见[这里](src/main/java/com/lcy/chapter1/t12/Main2.java)。
+1-12 OJ有问题，输出为空是可以pass的:D,
+
+但是正解总是runtime error
+
+1-12 代码见[这里](src/main/java/com/lcy/chapter1/t12/Main2.java)。
+Main2.java 为能pass的代码
 
 #### 第二章(未完成)
 更新到 2-5
@@ -47,4 +51,7 @@
 
 - 求逆序对
 - 点的凸包
+
+### 扩展问题
+- [Java快速读 BufferedReader](src/main/java/com/lcy/other/fast_read/Main.java)
 
