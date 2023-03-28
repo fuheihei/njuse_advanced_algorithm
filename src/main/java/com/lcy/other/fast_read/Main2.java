@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 /**
@@ -12,19 +13,20 @@ import java.util.StringTokenizer;
  * http://118.190.20.162/view.page?gpid=T104
  * <p>
  * 比如上面这题，如果不用BufferedReader,而用Scanner会报错
+ * scanner.next
  */
-public class Main {
+public class Main2 {
     static class Reader {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        Scanner reader = new Scanner(System.in);
         StringTokenizer tokenizer = new StringTokenizer("");
 
         String nextLine() throws IOException {// 读取下一行字符串
-            return reader.readLine();
+            return reader.next();
         }
 
         String next() throws IOException {// 读取下一个字符串
             while (!tokenizer.hasMoreTokens()) {
-                tokenizer = new StringTokenizer(reader.readLine());
+                tokenizer = new StringTokenizer(reader.next());
             }
             return tokenizer.nextToken();
         }
