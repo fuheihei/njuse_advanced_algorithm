@@ -50,7 +50,7 @@ public class Main {
                 return i - j;
             }
         });
-        System.out.println(String.join(" ", Arrays.stream(a3).map(o -> o.toString()).toArray(String[]::new)));
+        System.out.println(String.join(" ", Arrays.stream(a3).map(Object::toString).toArray(String[]::new)));
     }
 
 }
