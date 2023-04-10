@@ -11,9 +11,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int[] a = new int[]{1, 2, 3, 4, 4, 5, 5, 6, 7};
+        int[] a = new int[]{1, 2, 3, 4, 4, 5, 5, 6, 7, 7};
         for (int i = 0; i < a.length; i++) {
-            int j = bisect_left(a, a[i]);
+            int j = bisect_right(a, a[i]);
             System.out.println(j);
         }
         br.close();
