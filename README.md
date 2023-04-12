@@ -1,4 +1,4 @@
-# njuse_advanced_algorithm
+`# njuse_advanced_algorithm
 
 软件工程 高级算法课程OJ题汇总
 
@@ -9,6 +9,7 @@
 ### 进度
 
 #### chapter0 测试章节
+
 更新了 1-2new, 1-3new, 1-4new
 
 #### 第一章(完成)
@@ -24,10 +25,11 @@ Main2.java 为能pass的代码
 
 #### 第三章(完成)
 
-#### 第四章(未完成)
+#### 第四章(完成)
 
 #### 第五章(未完成)
 
+第8题有点问题，后续再看
 
 ### TODO:
 
@@ -45,10 +47,12 @@ Main2.java 为能pass的代码
 - 磁铁数组问题(2-5,浮点数二分)
 
 ### 深搜
+
 - 3-4 能否成环
 - 3-5 数字重组整除问题
 
 ### 动态规划
+
 - 3-6 牛的繁殖问题(线性动规)
 - 3-11 对称子字符串
 
@@ -58,5 +62,7 @@ Main2.java 为能pass的代码
 - 点的凸包
 
 ### 扩展问题
+
 - [Java快速读 BufferedReader](src/main/java/com/lcy/other/fast_read/Main.java)
 
+`
