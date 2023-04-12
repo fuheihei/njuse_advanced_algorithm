@@ -1,4 +1,4 @@
-`# njuse_advanced_algorithm
+## njuse_advanced_algorithm
 
 软件工程 高级算法课程OJ题汇总
 
@@ -65,4 +65,3 @@ Main2.java 为能pass的代码
 
 - [Java快速读 BufferedReader](src/main/java/com/lcy/other/fast_read/Main.java)
 
-`
