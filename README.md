@@ -1,6 +1,6 @@
 ## njuse_advanced_algorithm
 
-软件工程 高级算法课程OJ题汇总
+软件工程《高级算法》课程OJ题汇总
 
 第一章到第五章的Java实现OJ代码
 
@@ -18,8 +18,9 @@
 
 但是正解总是runtime error
 
-1-12 代码见[这里](src/main/java/com/lcy/chapter1/t12/Main2.java)。
-Main2.java 为能pass的代码
+1-12 理论代码见[这里](src/main/java/com/lcy/chapter1/t12/Main.java)。
+
+[Main2.java](src/main/java/com/lcy/chapter1/t12/Main2.java) 为能pass的代码
 
 #### 第二章(完成)
 
