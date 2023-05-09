@@ -63,7 +63,7 @@ public class Main {
         }
     }
 
-    // 递归
+    // 递归排序
     private static void quickSort(int[] a, int from, int to) {
         int l = from, r = to - 1;
         if (l < r) {

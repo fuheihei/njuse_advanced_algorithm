@@ -4,13 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 
 public class Main {
@@ -55,9 +49,31 @@ public class Main {
     private static ArrayList<String> getUniqueOutput(List<String> output) {
         Set<String> s = new HashSet<>();
         s.addAll(output);
-        ArrayList<String> unique = new ArrayList<String>();
-        unique.addAll(s);
-        Collections.sort(unique);
+        ArrayList<int[]> al = new ArrayList<int[]>();
+        ArrayList<String> unique = new ArrayList<>();
+        for (String ss : s) {
+            String[] d = ss.split(" ");
+            int[] a = new int[d.length];
+            for (int i = 0; i < d.length; i++) {
+                a[i] = Integer.parseInt(d[i]);
+            }
+            al.add(a);
+        }
+        Collections.sort(al, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                for (int i = 0; i < o1.length; i++) {
+                    if (o1[i] != o2[i]) {
+                        return Integer.compare(o1[i], o2[i]);
+                    }
+                }
+                return 0;
+            }
+        });
+        for (int[] aa : al) {
+            unique.add(String.join(" ",
+                    Arrays.stream(aa).mapToObj(o -> Integer.toString(o)).toArray(String[]::new)));
+        }
         return unique;
     }
 
